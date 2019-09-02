@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head >
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title>腾讯大王卡申请-办理大王卡申请入口-限时申请腾讯大王卡</title>
+        <link href="css/head-card.css" rel="stylesheet">
+        <script type="text/javascript" src="js/jq.js"></script>
+        <script type="text/javascript" src="js/utils.js"></script>
+        <script src="js/jq.js"></script>
+        <script src="js/carousel.js"></script>
+        <style>
+            html,body {padding:0px;font-size:12px;max-width: 780px;margin: 0 auto;}
+            @media (max-width: 780px) {
+                html,body{ width:100%; }
+            }
+            ul{list-style:none;}
+            .pic {width: 100%;margin: 0px;}
+            .pic img {width:100%;margin: 0;padding: 0;float: left;}
+            .poster-main{ position:relative;width:100%;height:270px; clear:both; }
+            .poster-main a,.poster-main img{display:block;}
+            .poster-main .poster-list{width:100%;height:270px;}
+            .poster-main .poster-list .poster-item{ position:absolute;left:0;top:0;}
+            .poster-main .poster-btn{ position:absolute;top:0;width:100px;height:270px; z-index:10; cursor:pointer;  opacity:0.8}
+            .poster-main .poster-prev-btn{left:0;}
+            .poster-main .poster-next-btn{right:0;}
+            .btn-box{ width:100%; padding:10px 0;}
+            .btn-box a{ width:50%;text-align: center; font-size:24px;color:#fff; line-height:50px; text-decoration:none;
+                        display:block; margin:10px  auto; cursor:pointer; }
+            .btn-box a img{ width:100%; border:0px;}
+            .foot{width:100%;line-height:20px; text-align:center;font-size:12px;color:#666}
+            .foot a{color:#666; text-decoration:none}
+        </style>
+       <!-- <script src="http://wt.10010.com/dcss18i18x5k2zlt536xi3f7e_7j3n/wtid.js"></script><script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script></head> -->
+    </head>
+    <body class="grey" style="">
+        <div class="wrap">
+            <section class="top-img">
+            </section>
+
+            <!--分了left center right三种方式，删除任意一个都没问题。checked为默认选择项-->
+
+            <section class="apply" id="desc" style="background-size: 100%">
+                <div class="switch-area">
+                    <div class="switch cf">
+                        <div class="tab left"  id="" sele-active="" data-url="'http://10010.unicom-cz.com/ApplyOut/apply?product=3&amp;devMobile=558062293336'" style="background: red 0 0 no-repeat;background-size:100%; "></div>
+                                <div class="tab center" checked sele-active="" data-url="'http://10010.unicom-cz.com/ApplyOut/apply?product=1&amp;devMobile=558062293336'" style="background: blue 0 0 no-repeat;background-size:100%;"></div>
+                        <div class="tab right" data-url="'http://10010.unicom-cz.com/ApplyOut/apply?product=2&amp;devMobile=558062293336'" style="background: white 0 0 no-repeat;background-size:100%;"></div>
+                    </div>
+                </div>
+                <div class="btn-box">
+                    <!-- <a id="jump" class="btn" target="_blank"><img src="img2/btn.png"></a> -->
+                </div>
+            </section>
+            <section class="charges-info mt-10 foot-img">
+            </section>
+            <a href="#" id="toTop"></a>
+        </div>
+    <!-- //  console.log(params);
+    //  console.log($.mobileUnEncode(params.devMobile))
+    //  console.log($.mobileEncode(params.devMobile));
+    //  console.log($.mobileUnEncode($.mobileEncode(params.devMobile))) -->
+<!-- <script type="text/javascript" src="js/common-b.js"></script> -->
+<!-- <script type="text/javascript" src="js/head-card.js"></script> -->
+<!-- <script type="text/javascript" src="js/commonImport.js"></script><script type="text/javascript" src="https://res.mall.10010.cn/mall/mobile/alay/inspect_v1.js"></script><script type="text/javascript" src="https://res.mall.10010.cn/mall/mobile/alay/dcs_tag_3g.js"></script> -->
+<!-- <script type="text/javascript" src="js/generalize.js"></script> -->
+    </body>
+    <script type="text/javascript">
+    // var params = $.formatSearch(window.location.search);
+        $('#jump').attr('href', $('#sele-active').attr('data-url'));
+        $('.switch .tab').on('click', function() {
+            $('#jump').attr('href', $(this).attr('data-url'));
+        });
+        var type = '1',
+            cook = true,
+            sid = "";
+        $(function() {
+            Carousel.init($(".poster-main"));
+            $("#btn_sign").click(function() {
+                var arrLi = $(".poster-item");
+                for (var i = 0; i < arrLi.size(); i++) {
+                    if (arrLi.eq(i).css("zIndex") == "1") {
+                        type = arrLi.eq(i).attr("data-type");
+                        break;
+                    }
+                }
+                var url = "http://10010.unicom-cz.com/ApplyOut/apply?product=" + type + "&devMobile=558062293336";
+                location.href = url;
+
+
+            })
+        })
+
+        function GetRequest() {
+            var url = location.search; //获取url中"?"符后的字串
+            var str = "";
+            if (url.indexOf("?") != -1) {
+                str = url.substr(1);
+            }
+            return str;
+        }
+    </script>
+</html>

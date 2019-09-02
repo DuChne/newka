@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .select{
+        width: 600px;
+        height: 300px;
+        background: pink;
+        position: relative;
+    }
+    .left {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50px;
+        margin: auto;
+        width: 150px;
+        height: 100px;
+        background: blue;
+        transition: all 2s
+    }
+    .center {
+        position: absolute;
+        width: 200px;
+        height: 150px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background: yellow;
+        z-index: 99;
+        transition: all 1s
+    }
+    .right {
+        position: absolute;
+        width: 150px;
+        height: 100px;
+        top: 0;
+        bottom: 0;
+        right: 50px;
+        margin: auto;
+        background: red;
+        transition: all 2s
+    }
+</style>
+<body>
+    <div class="content">
+        <div class="select" >
+            <div class="option left">
+                <img width='100%' height="100%" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568043204&di=353e2f96dcea287b91f6af06dd3af879&imgtype=jpg&er=1&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fblog%2F201508%2F21%2F20150821212048_aBieG.jpeg" alt="">
+            </div>
+            <div class="option center"> 
+                <img width='100%' height="100%" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567448415059&di=32b74a09f23bf7bc61ed7165569eef7b&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fblog%2F201412%2F27%2F20141227174553_auCHe.jpeg" alt="">
+            </div>
+            <div class="option right">
+                <img width='100%' height="100%" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567448353499&di=22c3da3be9484651ade615cbc82ef939&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201808%2F27%2F20180827043223_twunu.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // let options = document.getElementsByClassName('option')
+    let Left = document.getElementsByClassName('left')[0]
+    let Center = document.getElementsByClassName('center')[0]
+    let Right = document.getElementsByClassName('right')[0]
+    let content = document.getElementsByClassName('content')[0]
+    let options = document.getElementsByClassName('select')[0].children
+    let arr = ['left','right','center']
+    options[0].addEventListener('click',function(){
+        if(this.className.indexOf('center')==-1){
+            pevr()
+        }
+    },false);
+    options[1].addEventListener('click',function(){
+        console.log(this.className)
+        if(this.className.indexOf('center')==-1){
+            if(this.className.indexOf('right')!==-1){
+                next()
+            }else {
+                pevr()
+            }
+        }
+    },false);
+    options[2].addEventListener('click',function(){
+        if(this.className.indexOf('center')==-1){
+            next()2
+        }
+    },false);
+
+    // function pevr(){
+    //     let temp = options[0].className
+    //     options[0].className = options[1].className
+    //     options[1].className= options[2].className
+    //     options[2].className = temp
+    // }
+    // function next() {
+    //     let temp = options[2].className
+    //     options[2].className = options[0].className
+    //     options[0].className= options[1].className
+    //     options[1].className = temp
+    // }
+    function pevr(){
+        let temp = Left.className
+        Left.className = Center.className
+        Center.className= Right.className
+        Right.className = temp
+    }
+    function next() {
+        let temp = Right.className
+        Right.className = Left.className
+        Left.className= Center.className
+        Center.className = temp
+    }
+    // console.log(Left)
+    // Left.onClick = function() {
+    //     console.log(123123)
+    //     console.log(Left.className)
+    // }
+    // Right.onClick = function() {
+    //     console.log(456456)
+    // }
+</script>
+</html>
